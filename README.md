@@ -1,6 +1,30 @@
-# Password Tokenizer
+# Tokenizing Complex Passwords Using Breadth-First Search and Dictionary Matching
 
-This project provides a robust password tokenization tool that segments complex password strings into meaningful components such as dictionary words, numeric sequences, and symbolic units. Unlike traditional methods, this tool uses a Breadth-First Search (BFS) based approach to systematically explore all possible substrings and select the optimal segmentation path, ensuring high token coverage and accuracy.
+This repository contains the official implementation, scripts, and datasets required to reproduce the results presented in the paper "Tokenizing Complex Passwords Using Breadth-First Search and Dictionary Matching" published in IEEE Latin America Transactions.
+
+## Paper Information
+
+* **Title:** Tokenizing Complex Passwords Using Breadth-First Search and Dictionary Matching.
+* **Authors:**
+   * Salam Al-E'mari (Department of Information Security, Faculty of Information Technology, University of Petra, Amman, Jordan)
+   * Mohammad Al Sawalhi (Department of Information Security, Faculty of Information Technology, University of Petra, Amman, Jordan)
+   * Yousef Sanjalawe (Department of Information Technology, King Abdullah II School for Information Technology, University of Jordan, Amman, Jordan)
+* **Journal:** IEEE Latin America Transactions
+* **Manuscript ID:** 10673
+
+## Repository Structure & File Description
+
+The project files are organized as follows to ensure full reproducibility of the experimental analysis:
+
+| File / Folder Name | Description |
+| :--- | :--- |
+| `dictionaries/` | Directory containing the three generated leetspeak-enhanced wordlists. |
+| ├── `dictionaries/small_dictionary.txt` | Dictionary derived from 10,000 base words (233,813 tokens) using basic leetspeak mappings. |
+| ├── `dictionaries/medium_dictionary.txt` | Dictionary derived from 20,000 base words (997,496 tokens) with expanded mappings. |
+| └── `dictionaries/large_dictionary.txt` | Full dictionary derived from 44,742 base words (4,414,292 tokens) using extensive mappings. |
+| `tokenizer.py` | Main Python script containing the core BFS-based tokenization framework and post-processing leftover segmentation. |
+| `passwords_input.txt` | Input file containing the benchmarking real-world dataset of unique password samples used for experimental validation. |
+| `passwords_tokenized.txt` | Output file populated automatically by the script to store the final parsed and segmented token sequences. |
 
 ## Features
 
@@ -37,7 +61,7 @@ The larger dictionaries generally provide higher accuracy due to a more extensiv
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/password-tokenizer.git](https://github.com/yourusername/password-tokenizer.git)
+    git clone [https://github.com/mosawalhi7/password-tokenizer.git](https://github.com/mosawalhi7/password-tokenizer.git)
     cd password-tokenizer
     ```
 2.  **Prepare your dictionaries:**
@@ -79,3 +103,11 @@ The larger dictionaries generally provide higher accuracy due to a more extensiv
     secret _ word _ 456
     another Test 789
     ```
+
+## Evaluation Overview
+
+Based on experimental analysis over 100,000 unique real-world passwords, the underlying framework performance yields deterministic execution characteristics across the respective leetspeak dictionary variants:
+
+* **Small Dictionary:** Execution processing time benchmarked at `6.874 seconds`.
+* **Medium Dictionary:** Execution processing time benchmarked at `7.097 seconds`.
+* **Large Dictionary:** Execution processing time benchmarked at `8.423 seconds` with an optimized average per-password parsing runtime of `0.084 ms`.
