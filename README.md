@@ -9,7 +9,6 @@ This repository contains the official implementation, scripts, and datasets requ
    * Salam Al-E'mari (Department of Information Security, Faculty of Information Technology, University of Petra, Amman, Jordan)
    * Mohammad Al Sawalhi (Department of Information Security, Faculty of Information Technology, University of Petra, Amman, Jordan)
    * Yousef Sanjalawe (Department of Information Technology, King Abdullah II School for Information Technology, University of Jordan, Amman, Jordan)
-* **Journal:** IEEE Latin America Transactions
 * **Manuscript ID:** 10673
 
 ## Repository Structure & File Description
